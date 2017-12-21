@@ -38,76 +38,56 @@ public class ApplicationForSpringBoot {
 			 
 			Coin[] coins = restTemplate.getForObject("https://api.coinmarketcap.com/v1/ticker/", Coin[].class);
 
-			log.info(">>>> " + coins);
 
-			// VERGE
+			// VERGE COIN
 			Object[] vergeArray = Arrays.stream(coins).filter(x -> x.getName().equalsIgnoreCase("verge")).toArray();
 			log.info("Name :" + ((Coin) vergeArray[0]).getName());
 
 			log.info(" Price USD :" + Double.valueOf(((Coin) vergeArray[0]).getPrice_usd()));
-			log.info("Total Verge Holding : " + 1000 * Double.valueOf(((Coin) vergeArray[0]).getPrice_usd()) + " USD");
 
 			log.info("-------------------------------------------------");
 
-			// DIGIBYTE
+			// DIGIBYTE COIN
 			Object[] digibyteArray = Arrays.stream(coins).filter(x -> x.getName().equalsIgnoreCase("digibyte")).toArray();
 			log.info("Name :" + ((Coin) digibyteArray[0]).getName());
 
 			log.info(" Price USD :" + Double.valueOf(((Coin) digibyteArray[0]).getPrice_usd()));
 
-			log.info("Total Digibyte Holding : " + 500 * Double.valueOf(((Coin) digibyteArray[0]).getPrice_usd()) + " USD");
 
 			log.info("-------------------------------------------------");
 
-			// YOYOW
-			// Object[] yoyowArray = Arrays.stream(coins).filter(x ->
-			// x.getName().equalsIgnoreCase("yoyow"))
-			// .toArray();
-			// log.info("Name :" + ((Coin) yoyowArray[0]).getName());
-			//
-			// log.info(" Price USD :" + Double.valueOf(((Coin)
-			// yoyowArray[0]).getPrice_usd()));
-			//
-			// log.info("-------------------------------------------------");
+	
 
-			// CARDANO
+			// CARDANO COIN
 			Object[] cardanoArray = Arrays.stream(coins).filter(x -> x.getName().equalsIgnoreCase("cardano")).toArray();
 			log.info("Name :" + ((Coin) cardanoArray[0]).getName());
 
 			log.info(" Price USD :" + Double.valueOf(((Coin) cardanoArray[0]).getPrice_usd()));
 
-			log.info("Total Cardano Holding : " + 944 * Double.valueOf(((Coin) cardanoArray[0]).getPrice_usd()) + " USD");
+			
 
 			log.info("-------------------------------------------------");
 
-			// STREAMR
+			// STREAMR COIN
 			Object[] streamRArray = Arrays.stream(coins).filter(x -> x.getName().equalsIgnoreCase("streamr DataCoin"))
 					.toArray();
 			log.info("Name :" + ((Coin) streamRArray[0]).getName());
 
 			log.info(" Price USD :" + Double.valueOf(((Coin) streamRArray[0]).getPrice_usd()));
 
-			log.info("Total StreamR Holding : " + 957 * Double.valueOf(((Coin) streamRArray[0]).getPrice_usd()) + " USD");
 			
 			log.info("----------------------------------------------------");
 
-			//BTC
+			//BTC COIN
 			Object[] btcRArray = Arrays.stream(coins).filter(x -> x.getName().equalsIgnoreCase("bitcoin"))
 					.toArray();
 			log.info("Name :" + ((Coin) btcRArray[0]).getName());
 
 			log.info(" Price USD :" + Double.valueOf(((Coin) btcRArray[0]).getPrice_usd()));
 
-			log.info("Total BTC Holding : " + 0.0011 * Double.valueOf(((Coin) btcRArray[0]).getPrice_usd()) + " USD");
 
 			
-			
-			double totalHoldings = (957 * Double.valueOf(((Coin) streamRArray[0]).getPrice_usd()))
-					+ (944 * Double.valueOf(((Coin) cardanoArray[0]).getPrice_usd()))
-					+ (500 * Double.valueOf(((Coin) digibyteArray[0]).getPrice_usd()))
-					+ (1000 * Double.valueOf(((Coin) vergeArray[0]).getPrice_usd()))+
-					(0.0011 * Double.valueOf(((Coin) btcRArray[0]).getPrice_usd()));
-			log.info("------------TOTAL PORTFOLIO VALUE ==>>   " + totalHoldings+" USD + 200 * YOYOW price");
+	
 
 		
 		};
