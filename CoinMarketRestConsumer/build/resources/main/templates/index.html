@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+	  <title>Spring Boot - Angularjs Example</title>
+	  <meta charset="utf-8" />
+	  <meta name="viewport" content="width=device-width, initial-scale=1" />
+	  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	  <script src="/templates/controller.js"></script>
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	  
+</head>
+<body>
+
+<div class="container" ng-app="app">
+
+	<h3 style="color:blue">Http Angularjs With SpringBoot Example</h3>
+	
+
+	
+	<div class="col-sm-offset-2 col-sm-10" ng-controller="getcontroller">
+		<button id="btn-id" type="button" class="btn btn-primary" ng-click="getfunction()">Get All Customers</button>
+		<ul>
+        	<li ng-repeat="coin in response">{{coin.name}}</li>
+    	</ul>
+	</div>
+	
+</div>
+</body>
+</html>

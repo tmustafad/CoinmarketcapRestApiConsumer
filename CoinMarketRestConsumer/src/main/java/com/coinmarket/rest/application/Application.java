@@ -16,6 +16,13 @@ public class Application {
 		RestTemplate restTemplate = new RestTemplate();
 		Coin[] coins = restTemplate.getForObject("https://api.coinmarketcap.com/v1/ticker/", Coin[].class);
 
+		// IOTA
+		Object[] iotaArray = Arrays.stream(coins).filter(x -> x.getName().equalsIgnoreCase("iota")).toArray();
+		log.info("Name :" + ((Coin) iotaArray[0]).getName());
+
+		log.info(" Price USD :" + Double.valueOf(((Coin) iotaArray[0]).getPrice_usd()));
+
+		log.info("-------------------------------------------------");
 
 		// VERGE
 		Object[] vergeArray = Arrays.stream(coins).filter(x -> x.getName().equalsIgnoreCase("verge")).toArray();
@@ -31,9 +38,7 @@ public class Application {
 
 		log.info(" Price USD :" + Double.valueOf(((Coin) digibyteArray[0]).getPrice_usd()));
 
-
 		log.info("-------------------------------------------------");
-
 
 		// CARDANO
 		Object[] cardanoArray = Arrays.stream(coins).filter(x -> x.getName().equalsIgnoreCase("cardano")).toArray();
@@ -41,28 +46,14 @@ public class Application {
 
 		log.info(" Price USD :" + Double.valueOf(((Coin) cardanoArray[0]).getPrice_usd()));
 
-
 		log.info("-------------------------------------------------");
 
-		// STREAMR
-		Object[] streamRArray = Arrays.stream(coins).filter(x -> x.getName().equalsIgnoreCase("streamr DataCoin"))
-				.toArray();
-		log.info("Name :" + ((Coin) streamRArray[0]).getName());
 
-		log.info(" Price USD :" + Double.valueOf(((Coin) streamRArray[0]).getPrice_usd()));
-
-		
-		log.info("----------------------------------------------------");
-
-		//BTC
-		Object[] btcRArray = Arrays.stream(coins).filter(x -> x.getName().equalsIgnoreCase("bitcoin"))
-				.toArray();
+		// BTC
+		Object[] btcRArray = Arrays.stream(coins).filter(x -> x.getName().equalsIgnoreCase("bitcoin")).toArray();
 		log.info("Name :" + ((Coin) btcRArray[0]).getName());
 
 		log.info(" Price USD :" + Double.valueOf(((Coin) btcRArray[0]).getPrice_usd()));
-
-
-
 
 	}
 

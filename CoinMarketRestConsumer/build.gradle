@@ -41,10 +41,14 @@ dependencies {
  
 
 
-     compile("org.springframework.boot:spring-boot-starter")
+    compile("org.springframework.boot:spring-boot-starter")
     compile("org.springframework:spring-web")
     compile("com.fasterxml.jackson.core:jackson-databind")
+    compile("org.thymeleaf:thymeleaf-spring4")
+    compile("nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect")
+    compile 'org.springframework.boot:spring-boot-starter-web'
     testCompile("junit:junit")
+    
 }
 
 task wrapper(type: Wrapper) {
